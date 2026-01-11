@@ -1,0 +1,15 @@
+<h2>Teacher List</h2>
+
+<table border="1" cellpadding="8">
+  <tr>
+    <th>Name</th>
+    <th>Subject</th>
+    <th>Experience (Years)</th>
+  </tr>
+
+  <tr *ngFor="let teacher of teachers">
+    <td>{{ teacher.name }}</td>
+    <td>{{ teacher.subject }}</td>
+    <td>{{ teacher.experience }}</td>
+  </tr>
+</table>
