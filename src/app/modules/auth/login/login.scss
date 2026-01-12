@@ -1,0 +1,58 @@
+//variables:
+//colors
+$formBg: rgb(101, 178, 255);
+$mainBg: rgb(230, 243, 255);
+$input: rgb(247, 247, 247);
+
+// margin, padding, border
+$b-radius:6px;
+$m-50: 50px;
+$m-10: 10px;
+
+
+
+.formContainer {
+background-color: $mainBg;
+display: flex;
+flex-direction: column;
+text-align: center;
+
+}
+
+.form {
+  background-color: $formBg;
+  margin: auto;
+  border-radius: $b-radius;
+  padding: 20px;
+  box-shadow: 0px 0px 5px 1px rgb(149, 149, 149);
+}
+
+.inputField {
+  background-color: $input;
+  border-radius: $b-radius;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 1px 1px rgb(254, 254, 255);
+  &:hover {
+    box-shadow: inset 0px 1px 13px -4px rgb(122, 123, 124);
+  }
+}
+
+.formBtn {
+  border-radius: $b-radius;
+  border: none;
+  &:hover {
+    box-shadow: 0px 0px 3px 1px rgb(254, 254, 255);
+  }
+}
+.signupBtn {
+  border-radius: $b-radius;
+  border: none;
+  &:hover {
+    box-shadow: 0px 0px 3px 1px rgb(254, 254, 255);
+  }
+}
+
+.hideTable {
+  display: none;
+}

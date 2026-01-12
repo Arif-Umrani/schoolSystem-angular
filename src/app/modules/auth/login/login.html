@@ -1,0 +1,38 @@
+<div class="formContainer">
+  <!-- login form -->
+  <form class="form my-5">
+    <h2 class="my-3">Login Form</h2>
+    <input type="text" class="inputField" placeholder="User ID" [(ngModel)]="userName" name="userName" />
+
+    <br><br>
+
+    <input type="password" class="inputField" placeholder="Password" [(ngModel)]="password" name="password" />
+
+    <br><br>
+
+    <div class="d-flex justify-content-center align-items-center">
+      <button type="button" class="formBtn" (click)="login()">
+        Login
+      </button>
+
+      <a routerLink="/signup" class="formBtn bg-ligh text-dark text-decoration-none px-2">
+        Signup
+      </a>
+    </div>
+  </form>
+  <p>{{ loginMsg }} </p>
+</div>
+
+
+<!-- table to show the users -->
+<table class="hideTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="userList"></tbody>
+</table>
