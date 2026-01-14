@@ -22,28 +22,10 @@ export class StudentAdd {
   successMsg = '';
 
   constructor() {
-    const saved = localStorage.getItem('students');
-    if (saved) {
-      this.students = JSON.parse(saved);
-    }
+      
   }
 
-  addStudent() {
-    if (!this.student.name || !this.student.class || !this.student.age) {
-      alert('Please fill all fields');
-      return;
-    }
+  addStudent(){
 
-    this.students.push({ ...this.student });
-    localStorage.setItem('students', JSON.stringify(this.students));
-
-    this.successMsg = 'Student added successfully!';
-    this.resetForm();
-
-    setTimeout(() => this.successMsg = '', 3000);
-  }
-
-  resetForm() {
-    this.student = { name: '', class: '', age: null};
-  }
+  };
 }
