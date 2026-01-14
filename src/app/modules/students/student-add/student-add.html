@@ -14,7 +14,7 @@
       type="text"
       class="form-control mb-2"
       placeholder="Class"
-      [(ngModel)]="student.class"
+      [(ngModel)]="student.className"
       name="class">
 
     <input
@@ -23,12 +23,10 @@
       placeholder="Age"
       [(ngModel)]="student.age"
       name="age">
-
-    <button class="btn btn-primary" (click)="addStudent()">
-      Add Student
-    </button>
-
-    <p class="text-success mt-2">{{ successMsg }}</p>
-
+      <button class="btn btn-primary" (click)="addStudent()">
+        Add Student
+      </button>
+      
+      <p class="text-success mt-2">{{ successMsg }}</p>
   </div>
 </div>
