@@ -3,6 +3,7 @@ import { StudentList } from './modules/students/student-list/student-list';
 import { TeacherList } from './modules/teachers/teacher-list/teacher-list';
 import { Login } from './modules/auth/login/login';
 import { StudentAdd } from './modules/students/student-add/student-add';
+import { TeacherAdd } from './modules/teachers/teacher-add/teacher-add';
 
 
 export const routes: Routes = [
@@ -14,6 +15,10 @@ export const routes: Routes = [
    },
   // { path: 'students/add', component: StudentAdd },
   { path: '', redirectTo: 'students', pathMatch: 'full' },
-  { path: 'teachers', component:TeacherList }
+  { path: 'teachers', component:TeacherList,
+    children: [
+      { path: 'add', component: TeacherAdd },
+    ]
+   }
 
 ];

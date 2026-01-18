@@ -1,0 +1,24 @@
+<div>
+  <h2>Add Teacher</h2>
+
+  <form>
+    <input type="text"
+    placeholder="Teacher Name"
+    [(ngModel)]="teacher.name"
+    name="name">
+
+    <input type="text"
+    placeholder="Subject"
+    [(ngModel)]="teacher.subject"
+    name="subject">
+
+    <input type="text"
+    placeholder="Teacher Experience"
+    [(ngModel)]="teacher.experience"
+    name="experience">
+
+    <button (click)="addTeacher()">Add Teacher</button>
+  </form>
+
+  <p>{{ successMsg }}</p>
+</div>
