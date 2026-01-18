@@ -19,4 +19,12 @@ export class StudentService {
   addStudent(student: Student) {
     this.students.push(student);
   }
+
+  updateStudent(index: number, student: Student ) {
+    this.students[index] = student;
+  }
+
+  deleteStudent(index: number) {
+    this.students.splice(index, 1);
+  }
 }
