@@ -15,10 +15,14 @@ export const routes: Routes = [
    },
   // { path: 'students/add', component: StudentAdd },
   { path: '', redirectTo: 'students', pathMatch: 'full' },
+  
+  { path: 'teachers/add', component: TeacherAdd},
+  
   { path: 'teachers', component:TeacherList,
     children: [
       { path: 'add', component: TeacherAdd },
     ]
-   }
+   },
 
+   { path: 'teachers/edit/:id', component: TeacherAdd},
 ];

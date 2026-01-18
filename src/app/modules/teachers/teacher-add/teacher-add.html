@@ -1,23 +1,31 @@
 <div>
   <h2>Add Teacher</h2>
 
-  <form>
+  <form (ngSubmit)="addTeacher()">
     <input type="text"
     placeholder="Teacher Name"
     [(ngModel)]="teacher.name"
     name="name">
+
+    <br><br>
 
     <input type="text"
     placeholder="Subject"
     [(ngModel)]="teacher.subject"
     name="subject">
 
-    <input type="text"
+    <br><br>
+
+    <input type="number"
     placeholder="Teacher Experience"
     [(ngModel)]="teacher.experience"
     name="experience">
 
-    <button (click)="addTeacher()">Add Teacher</button>
+    <br><br>
+
+    <button type="submit">
+      {{ editIndex === null ? 'addTeacher' : 'Update Teacher'}}
+    </button>
   </form>
 
   <p>{{ successMsg }}</p>

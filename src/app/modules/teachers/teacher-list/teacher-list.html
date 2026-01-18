@@ -6,11 +6,18 @@
     <th>Name</th>
     <th>Subject</th>
     <th>Experience (Years)</th>
+    <th>Actions</th>
   </tr>
 
-  <tr *ngFor="let teacher of teachers">
+  <tr *ngFor="let teacher of teachers; let i = index">
     <td>{{ teacher.name }}</td>
     <td>{{ teacher.subject }}</td>
     <td>{{ teacher.experience }}</td>
+    <td>
+      <!-- <button (click)="editTeacher(i)">Edit</button> -->
+      <button [routerLink]="['/teachers/edit', i]">Edit</button>
+
+      <button (click)="deleteTeacher(i)">Delete</button>
+    </td>
   </tr>
 </table>

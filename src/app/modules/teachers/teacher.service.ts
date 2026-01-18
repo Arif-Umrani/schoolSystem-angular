@@ -19,4 +19,16 @@ export class TeacherService {
   addTeacher(teacher: Teacher) {
     this.teachers.push(teacher);
   }
+
+  updateTeacher(index: number, teacher: any) {
+    this.teachers[index] = teacher;
+  }
+
+  deleteTeacher(index: number) {
+    this.teachers.splice(index, 1);
+  }
+
+  getTeachersByIndex(index: number): Teacher {
+    return this.teachers[index];
+  }
 }
