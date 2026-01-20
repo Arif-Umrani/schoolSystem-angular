@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Student } from '../../shared/models/student.model';
+import { Teacher } from '../../shared/models/teacher.model';
 
 
 @Injectable({
@@ -26,5 +27,9 @@ export class StudentService {
 
   deleteStudent(index: number) {
     this.students.splice(index, 1);
+  }
+
+  getStudentsByIndex(index: number): Student {
+    return this.students[index];
   }
 }

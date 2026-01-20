@@ -1,14 +1,15 @@
 <div class="container mt-4">
-  <div class="card p-4">
-    
-    <h3 class="mb-3">Add Student</h3>
-
+  <h2 class="mb-3">Add Student</h2>
+  
+  <form (ngSubmit)="addStudent()"  class="card p-4">
     <input
       type="text"
       class="form-control mb-2"
       placeholder="Student Name"
       [(ngModel)]="student.name"
       name="name">
+
+      <br><br>
 
     <input
       type="text"
@@ -17,16 +18,26 @@
       [(ngModel)]="student.className"
       name="class">
 
+      <br><br>
+
     <input
       type="number"
       class="form-control mb-3"
       placeholder="Age"
       [(ngModel)]="student.age"
       name="age">
-      <button class="btn btn-primary" (click)="addStudent()">
-        Add Student
-      </button>
+
+      <br><br>
       
-      <p class="text-success mt-2">{{ successMsg }}</p>
-  </div>
+      <!-- <button type="submit" class="btn btn-primary" (click)="addStudent()">
+        Add Student
+      </button> -->
+      
+      <button type="submit">
+        {{ editIndex === null ? 'Add Student' : 'Update Student' }}
+      </button>
+
+      <!-- <p class="text-success mt-2">{{ successMsg }}</p> -->
+       <p>{{ successMsg }}</p>
+  </form>
 </div>

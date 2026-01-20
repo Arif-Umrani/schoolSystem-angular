@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { StudentService } from '../student.service';
 import { Student } from '../../../shared/models/student.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-add',
@@ -23,19 +24,41 @@ export class StudentAdd {
 
   successMsg = '';
 
-  constructor(private studentService: StudentService) {
+  editIndex: number | null = null;
+
+
+  constructor(
+    private studentService: StudentService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+      const id = this.route.snapshot.paramMap.get('id');
       
+      if (id !== null) {
+        this.editIndex = +id;
+        const data = this.studentService.getStudents()[this.editIndex];
+
+        if (data) {
+          this.student = { ...data };
+        }
+      }
   }
 
   addStudent(){
-    console.log('29 student', this.student);
-    this.studentService.addStudent(this.student);
-    
-    this.student = {
-      name: '',
-      className: '',
-      age: null,
+    // console.log('29 student', this.student);
+
+    if (!this.student.name || !this.student.className || !this.student.age) {
+      alert('Please fill all fields');
+      return;
     }
-    console.log('36 student', this.student);
+
+    if (this.editIndex == null) {
+      this.studentService.addStudent(this.student);
+    } else {
+      this.studentService.updateStudent(this.editIndex, this.student);
+    }
+
+    this.router.navigate(['/students']);
+    // console.log('36 student', this.student);
   };
 }
