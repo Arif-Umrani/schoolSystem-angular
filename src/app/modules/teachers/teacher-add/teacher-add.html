@@ -1,5 +1,5 @@
-<div>
-  <h2>Add Teacher</h2>
+<div class="container mt-4">
+  <h2 class="mb-3">Add Teacher</h2>
 
   <form (ngSubmit)="addTeacher()">
     <input type="text"
@@ -23,7 +23,7 @@
 
     <br><br>
 
-    <button type="submit">
+    <button type="submit" class="actionBtn">
       {{ editIndex === null ? 'Add Teacher' : 'Update Teacher'}}
     </button>
   </form>
