@@ -3,7 +3,7 @@
 <h2>Teacher List</h2>
 
 <table border="1" cellpadding="8">
-  <tr>
+  <tr class="bg-primary">
     <th>Name</th>
     <th>Subject</th>
     <th>Experience <br> (Years)</th>
@@ -16,9 +16,9 @@
     <td>{{ teacher.experience }}</td>
     <td>
       <!-- <button (click)="editTeacher(i)">Edit</button> -->
-      <button [routerLink]="['/teachers/edit', i]">Edit</button>
+      <button [routerLink]="['/teachers/edit', i]" class="actionBtn">Edit</button>
 
-      <button (click)="deleteTeacher(i)">Delete</button>
+      <button (click)="deleteTeacher(i)" class="actionBtn">Delete</button>
     </td>
   </tr>
 </table>
